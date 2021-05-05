@@ -1,3 +1,5 @@
+mod observer;
+
 #[cfg(test)]
 mod tests {
     #[test]
