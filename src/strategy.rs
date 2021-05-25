@@ -19,6 +19,10 @@ impl Duck {
         }
     }
 
+    pub fn kind(&self) -> &str {
+        self.kind
+    }
+
     pub fn quack(&mut self) {
         self.quack_behavior.do_quack()
     }
@@ -46,6 +50,7 @@ fn duck_concert() {
     ];
 
     for duck in &mut ducks {
+        println!("{}:", duck.kind());
         duck.quack();
         duck.quack();
     }
