@@ -2,11 +2,11 @@
 //! ================
 //!
 
-trait QuackBehavior: 'static {
+pub trait QuackBehavior: 'static {
     fn do_quack(&mut self);
 }
 
-struct Duck {
+pub struct Duck {
     kind: &'static str,
     quack_behavior: Box<dyn QuackBehavior>,
 }

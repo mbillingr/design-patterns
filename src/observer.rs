@@ -35,13 +35,13 @@ trait Observer<T> {
 }
 
 #[derive(Default)]
-struct ExampleSubject {
+pub struct ExampleSubject {
     observers: Vec<Weak<dyn Observer<i32>>>,
     state: i32,
 }
 
 impl ExampleSubject {
-    fn set_state(&mut self, state: i32) {
+    pub fn set_state(&mut self, state: i32) {
         self.state = state;
         self.notify_observers();
     }
@@ -91,12 +91,11 @@ impl Observer<i32> for ExampleObserver {
     }
 }
 
-#[cfg(test)]
 mod tests {
-    use super::*;
-
     #[test]
     fn working_example() {
+        use super::*;
+
         let mut subject = ExampleSubject::default();
         let obs1 = Arc::new(ExampleObserver::default());
         let obs2 = Arc::new(ExampleObserver::default());

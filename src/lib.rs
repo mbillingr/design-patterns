@@ -1,5 +1,5 @@
-mod abstract_factory;
-mod decorator;
-mod factory_method;
-mod observer;
-mod strategy;
+pub mod abstract_factory;
+pub mod decorator;
+pub mod factory_method;
+pub mod observer;
+pub mod strategy;

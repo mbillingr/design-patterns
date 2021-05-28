@@ -9,7 +9,7 @@
 //! they can directly use the Component trait.
 //!
 
-trait Predictor {
+pub trait Predictor {
     fn fit(self, x: impl Iterator<Item = f64>, y: impl Iterator<Item = f64>) -> Self;
     fn predict<'a>(&self, x: impl Iterator<Item = f64> + 'a) -> Box<dyn Iterator<Item = f64> + 'a>;
 }
@@ -46,7 +46,7 @@ impl Predictor for LinearPredictor {
     }
 }
 
-struct LogYDecorator<P: Predictor> {
+pub struct LogYDecorator<P: Predictor> {
     decorated_predictor: P,
 }
 
@@ -70,7 +70,7 @@ impl<P: Predictor> Predictor for LogYDecorator<P> {
     }
 }
 
-struct LogXDecorator<P: Predictor> {
+pub struct LogXDecorator<P: Predictor> {
     decorated_predictor: P,
 }
 
