@@ -1,5 +1,5 @@
-//! Factory Metod Pattern
-//! =====================
+//! Factory Method Pattern
+//! ======================
 //!
 
 trait Pizza {
